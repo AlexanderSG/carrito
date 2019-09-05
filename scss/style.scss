@@ -56,7 +56,7 @@ body {
 
 }
 
-//imagen y buscador
+/*imagen y buscador*/
 .hero {
     @include background-image('../img/hero.jpg');
     background-size: cover;
@@ -110,6 +110,7 @@ body {
 
 }
 
+/*barra*/
 .barra {
     min-height: 6rem;
     @include gradiente ($secundario, $terciario);
