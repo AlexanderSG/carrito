@@ -13,7 +13,7 @@ gulp.task("sass", () => {
     )
     .pipe(
       sass({
-        outputStyle: "expended"
+        outputStyle: "expanded"
       })
     )
     .pipe(gulp.dest("css"));
