@@ -1,0 +1,258 @@
+@import "theme/variables";
+@import "Modulos/mixin.scss";
+
+html {
+    @include box-sizing(border-box);
+}
+
+*,
+*::after,
+*::before {
+    @include box-sizing(inherit);
+}
+
+body {
+    font-family: $fuente-principal;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.oculto {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        padding: 1.4rem 0;
+    }
+}
+
+// mostramos cuadro al hacer hover en el icono carrito
+.carrito-compras {
+    position: relative;
+
+    &:hover .contenido {
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 1rem;
+        background: hsl(360, 0, 90);
+    }
+
+    img {
+        max-width: 150px;
+    }
+
+    .boton {
+        @include button($fuente-principal);
+    }
+
+}
+
+//imagen y buscador
+.hero {
+    @include background-image('../img/hero.jpg');
+    background-size: cover;
+    color: #fff;
+    min-height: 24rem;
+    display: flex;
+    align-items: center;
+
+
+    .contenido-hero {
+        flex: 1;
+
+        h2 {
+            font-weight: 400;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        form {
+            @include tablet() {
+                width: 40%;
+            }
+
+            position: relative;
+
+            input[type="text"] {
+                width: 100%;
+                height: 3rem;
+            }
+
+            input[type="submit"] {
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include background-image('../img/lupa.png');
+                width: 3rem;
+                height: 3rem;
+                display: block;
+                text-indent: -9999px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+
+            }
+        }
+    }
+
+}
+
+.barra {
+    min-height: 6rem;
+    @include gradiente ($secundario, $terciario);
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+    .iconos {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+
+        @include desktop() {
+            flex-direction: row;
+        }
+
+    }
+
+
+}
+
+.icono {
+    flex: 1;
+    background-position: 5% center;
+
+    @include tablet() {
+        background-position: 20% center;
+    }
+
+    @include desktop {
+        background-position: left center;
+    }
+}
+
+.icono1 {
+    @include background-iconos('../img/icono1.png');
+
+}
+
+.icono2 {
+    @include background-iconos('../img/icono2.png');
+
+}
+
+.icono3 {
+    @include background-iconos('../img/icono3.png');
+
+}
+
+/*Cursos*/
+
+.centrado {
+    text-align: center;
+}
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.curso {
+    .imagen-curso {
+        width: 100%;
+
+    }
+
+    border: 1px solid darken(hsl(360, 0, 90), 10);
+    margin-bottom: 1rem;
+    flex: 0 1 calc(50% - 1rem); //para poner dos elementos en dispositivos pequeños
+
+    @include tablet {
+        flex: 0 1 calc(33% - 1rem);
+    }
+
+    @include desktop {
+        flex: 0 1 calc(25% - 1rem);
+    }
+
+
+}
+
+.info-curso {
+    padding: 1rem;
+
+    h4 {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .precio {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .regular {
+        text-decoration: line-through;
+        color: red;
+    }
+
+    .oferta {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: green;
+    }
+}
+
+.boton {
+    @include button($secundario)
+}
+
+/*footer*/
+
+.footer {
+    border: 1px solid darken(hsl(360, 0, 90), 10);
+    padding-top: 2rem;
+
+    .contenedor-footer {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+
+    @include desktop {
+        flex: 0 1 calc(30% - 1rem);
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+        margin-bottom: .5rem;
+
+    }
+}

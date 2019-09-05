@@ -5,15 +5,20 @@ const gulp = require("gulp"),
 gulp.task("sass", () => {
   gulp
     .src("scss/style.scss")
-    .pipe(autoprefixer({}))
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 2 versions"],
+        cascade: false
+      })
+    )
     .pipe(
       sass({
-        includePaths: ["scss"]
+        outputStyle: "expended"
       })
     )
     .pipe(gulp.dest("css"));
 });
-gulp.task("watch", ["sass"], () => {
-  gulp.watch(["scss/*.scss"], ["sass"]);
-});
 
+gulp.task("default", () => {
+  gulp.watch("scss/*.scss", gulp.series("sass"));
+});
