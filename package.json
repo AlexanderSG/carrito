@@ -1,15 +1,24 @@
 {
   "name": "carrito",
   "version": "1.0.0",
-  "description": "carrito de compra con flexbox\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Den\u001b[3~\u001b[3~\u001b[C\u001b\u001b[Cn\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C flexbox",
+  "description": "carrito de compras con flexbox",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/Altair2137/carrito"
+    "url": "git+https://github.com/Altair2137/carrito.git"
   },
-  "author": "Alexander Sandino Gonzalez",
-  "license": "ISC"
+  "author": "Alexander Francisco Sandino Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderSG/carrito/issues"
+  },
+  "homepage": "https://github.com/AlexanderSG/carrito#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
